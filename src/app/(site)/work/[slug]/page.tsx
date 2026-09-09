@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { FiArrowLeft, FiExternalLink, FiGithub } from "react-icons/fi";
+import { FiExternalLink, FiGithub } from "react-icons/fi";
 import { Container } from "@/components/layout/Container";
 import { FadeUp } from "@/components/ui/Motion";
 import { RichText } from "@/components/ui/RichText";
@@ -79,9 +79,8 @@ export default async function ProjectPage({
         <Container className="relative py-16 sm:py-24">
           <Link
             href="/work"
-            className="mb-10 inline-flex items-center gap-2 text-[0.65rem] uppercase tracking-[0.2em] text-dim transition-colors hover:text-gold-light"
+            className="mb-10 inline-flex text-[0.65rem] uppercase tracking-[0.2em] text-dim transition-colors hover:text-gold-light"
           >
-            <FiArrowLeft className="h-3.5 w-3.5" />
             All work
           </Link>
 

@@ -21,10 +21,6 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
-
-  useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
@@ -43,6 +39,7 @@ export function Header() {
         <div className="flex h-[72px] items-center justify-between">
           <Link
             href="/"
+            onClick={() => setOpen(false)}
             className="group flex items-center gap-3"
             aria-label={`${site.name} home`}
           >
@@ -113,6 +110,7 @@ export function Header() {
                   <Link
                     key={link.href}
                     href={link.href}
+                    onClick={() => setOpen(false)}
                     className="border-b border-line py-4 text-sm uppercase tracking-[0.2em] text-muted transition-colors hover:text-gold-light"
                   >
                     {link.label}

@@ -1,4 +1,3 @@
-import { FiArrowRight } from "react-icons/fi";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FadeUp } from "@/components/ui/Motion";
@@ -41,9 +40,8 @@ export function CurrentlyBuilding({
         </p>
 
         {url && (
-          <span className="mt-7 inline-flex items-center gap-2 text-[0.65rem] uppercase tracking-[0.2em] text-gold-light">
+          <span className="mt-7 inline-flex text-[0.65rem] uppercase tracking-[0.2em] text-gold-light">
             Visit
-            <FiArrowRight className="h-3.5 w-3.5" />
           </span>
         )}
       </div>

@@ -1,4 +1,3 @@
-import { FiArrowRight } from "react-icons/fi";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Stagger, StaggerItem, FadeUp } from "@/components/ui/Motion";
@@ -41,10 +40,7 @@ export function Services() {
         </Stagger>
 
         <FadeUp className="mt-12 flex justify-center">
-          <GoldLink href="/contact">
-            Need a website
-            <FiArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-          </GoldLink>
+          <GoldLink href="/contact">Need a website</GoldLink>
         </FadeUp>
       </Container>
     </section>

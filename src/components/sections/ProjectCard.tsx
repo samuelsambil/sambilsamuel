@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FiArrowUpRight } from "react-icons/fi";
 import { urlFor } from "@/lib/sanity/image";
 import type { Project } from "@/lib/sanity/types";
 
@@ -53,12 +52,9 @@ export function ProjectCard({ project }: { project: Project }) {
       </div>
 
       <div className="flex flex-1 flex-col border-t border-line p-5 transition-colors duration-500 group-hover:border-line-gold">
-        <div className="flex items-start justify-between gap-3">
-          <h3 className="font-display text-base font-semibold tracking-[0.05em] text-cream transition-colors group-hover:text-gold-light">
-            {project.title}
-          </h3>
-          <FiArrowUpRight className="mt-0.5 h-4 w-4 shrink-0 text-dim transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-gold" />
-        </div>
+        <h3 className="font-display text-base font-semibold tracking-[0.05em] text-cream transition-colors group-hover:text-gold-light">
+          {project.title}
+        </h3>
 
         <p className="mt-3 line-clamp-2 text-[0.8rem] leading-relaxed text-muted">
           {project.description}

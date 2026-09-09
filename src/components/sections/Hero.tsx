@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FiArrowDownRight, FiArrowRight } from "react-icons/fi";
 import { GoldLink } from "@/components/ui/Button";
 import { Container } from "@/components/layout/Container";
 import { CornerBrackets, GoldLattice, Glow } from "@/components/ui/Ornaments";
@@ -89,12 +88,8 @@ export function Hero({
             >
               <GoldLink href="/work" variant="ghost">
                 Works
-                <FiArrowDownRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
               </GoldLink>
-              <GoldLink href="/contact">
-                Hire me
-                <FiArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-              </GoldLink>
+              <GoldLink href="/contact">Hire me</GoldLink>
             </motion.div>
 
             <motion.div variants={fadeUpVariants} className="mt-12">

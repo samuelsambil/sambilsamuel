@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { FiArrowRight, FiCheck } from "react-icons/fi";
+import { FiCheck } from "react-icons/fi";
 import { GoldButton } from "@/components/ui/Button";
 
 type Status = "idle" | "sending" | "sent" | "error";
@@ -165,7 +165,6 @@ export function ContactForm() {
 
       <GoldButton type="submit" disabled={status === "sending"} className="disabled:opacity-60">
         {status === "sending" ? "Sending" : "Send message"}
-        <FiArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
       </GoldButton>
     </form>
   );
