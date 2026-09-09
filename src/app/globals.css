@@ -2,25 +2,28 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  /* Surfaces — deep, warm-tinted black */
-  --color-ink: #050507;
-  --color-ink-soft: #0a0a0e;
-  --color-surface: #101017;
-  --color-surface-raised: #16161f;
+  /* Surfaces — warm ivory paper */
+  --color-paper: #faf8f3;
+  --color-paper-soft: #f6f3ec;
+  --color-panel: #f2eee4;
+  --color-panel-raised: #ece7da;
 
-  /* Gold accent */
-  --color-gold: #c9a227;
-  --color-gold-light: #e8c87e;
-  --color-gold-deep: #8a6d16;
+  /* Gold accent. `gold` is decorative (borders, ornaments, washes);
+     `gold-strong` is the only one that clears 4.5:1 on paper, so it carries
+     every piece of accent text. `gold-soft` is the light end of gradients. */
+  --color-gold: #a8871d;
+  --color-gold-strong: #7a5f12;
+  --color-gold-soft: #d9bd62;
 
-  /* Type */
-  --color-cream: #f4f1e8;
-  --color-muted: #9d9891;
-  --color-dim: #6b6862;
+  /* Type — warm near-black, stepping down through two greys.
+     All three clear 4.5:1 on paper. */
+  --color-ink: #1a1917;
+  --color-muted: #5a5751;
+  --color-dim: #6f6c65;
 
   /* Lines */
-  --color-line: rgba(244, 241, 232, 0.08);
-  --color-line-gold: rgba(201, 162, 39, 0.28);
+  --color-line: rgba(26, 25, 23, 0.12);
+  --color-line-gold: rgba(122, 95, 18, 0.32);
 
   --font-display: var(--font-cinzel), "Cormorant Garamond", Georgia, serif;
   --font-sans: var(--font-jost), "Inter", ui-sans-serif, system-ui, sans-serif;
@@ -51,18 +54,18 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--color-ink);
+  background-color: var(--color-paper);
 }
 
 body {
-  background-color: var(--color-ink);
-  color: var(--color-cream);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
   font-family: var(--font-sans);
 }
 
 ::selection {
-  background-color: rgba(201, 162, 39, 0.3);
-  color: var(--color-cream);
+  background-color: rgba(168, 135, 29, 0.24);
+  color: var(--color-ink);
 }
 
 /* Scrollbar */
@@ -70,23 +73,23 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-ink);
+  background: var(--color-paper-soft);
 }
 ::-webkit-scrollbar-thumb {
-  background: #2a2a33;
+  background: #d6d0c2;
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-gold-deep);
+  background: var(--color-gold);
 }
 
 @utility text-gold-gradient {
   background-image: linear-gradient(
     100deg,
-    var(--color-gold-deep) 0%,
-    var(--color-gold-light) 42%,
-    var(--color-gold) 72%,
-    var(--color-gold-light) 100%
+    var(--color-gold-strong) 0%,
+    var(--color-gold) 42%,
+    var(--color-gold-strong) 72%,
+    var(--color-gold) 100%
   );
   background-clip: text;
   color: transparent;
@@ -97,7 +100,7 @@ body {
     90deg,
     transparent,
     var(--color-gold) 45%,
-    var(--color-gold-light) 55%,
+    var(--color-gold-strong) 55%,
     transparent
   );
 }

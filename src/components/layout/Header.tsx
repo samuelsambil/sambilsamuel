@@ -31,7 +31,7 @@ export function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled || open
-          ? "border-b border-line bg-ink/85 backdrop-blur-xl"
+          ? "border-b border-line bg-paper/85 backdrop-blur-xl"
           : "border-b border-transparent"
       }`}
     >
@@ -44,7 +44,7 @@ export function Header() {
             aria-label={`${site.name} home`}
           >
             <Monogram />
-            <span className="font-display text-sm font-semibold tracking-[0.34em] text-cream transition-colors group-hover:text-gold-light">
+            <span className="font-display text-sm font-semibold tracking-[0.34em] text-ink transition-colors group-hover:text-gold-strong">
               {site.shortName}
             </span>
           </Link>
@@ -61,8 +61,8 @@ export function Header() {
                   href={link.href}
                   className={`relative text-[0.7rem] font-medium uppercase tracking-[0.2em] transition-colors ${
                     active
-                      ? "text-gold-light"
-                      : "text-muted hover:text-cream"
+                      ? "text-gold-strong"
+                      : "text-muted hover:text-ink"
                   }`}
                 >
                   {link.label}
@@ -77,7 +77,7 @@ export function Header() {
           <div className="hidden md:block">
             <Link
               href="/contact"
-              className="border border-line-gold px-5 py-2.5 text-[0.65rem] font-medium uppercase tracking-[0.2em] text-gold-light transition-all duration-300 hover:bg-gold/10 hover:shadow-[0_0_24px_-8px_rgba(201,162,39,0.7)]"
+              className="border border-line-gold px-5 py-2.5 text-[0.65rem] font-medium uppercase tracking-[0.2em] text-gold-strong transition-all duration-300 hover:bg-gold/10 hover:shadow-[0_0_24px_-8px_rgba(122,95,18,0.34)]"
             >
               Let&apos;s talk
             </Link>
@@ -88,7 +88,7 @@ export function Header() {
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
-            className="text-cream transition-colors hover:text-gold-light md:hidden"
+            className="text-ink transition-colors hover:text-gold-strong md:hidden"
           >
             {open ? <FiX className="h-6 w-6" /> : <FiMenu className="h-6 w-6" />}
           </button>
@@ -102,7 +102,7 @@ export function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.35, ease: [0.22, 0.61, 0.36, 1] }}
-            className="overflow-hidden border-t border-line bg-ink/95 backdrop-blur-xl md:hidden"
+            className="overflow-hidden border-t border-line bg-paper/95 backdrop-blur-xl md:hidden"
           >
             <Container>
               <nav className="flex flex-col py-6">
@@ -111,7 +111,7 @@ export function Header() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="border-b border-line py-4 text-sm uppercase tracking-[0.2em] text-muted transition-colors hover:text-gold-light"
+                    className="border-b border-line py-4 text-sm uppercase tracking-[0.2em] text-muted transition-colors hover:text-gold-strong"
                   >
                     {link.label}
                   </Link>
@@ -131,7 +131,7 @@ function Monogram() {
       aria-hidden="true"
       className="relative flex h-8 w-8 rotate-45 items-center justify-center border border-line-gold transition-colors group-hover:border-gold"
     >
-      <span className="-rotate-45 font-display text-[0.7rem] font-semibold text-gold-light">
+      <span className="-rotate-45 font-display text-[0.7rem] font-semibold text-gold-strong">
         S
       </span>
     </span>

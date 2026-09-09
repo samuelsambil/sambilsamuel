@@ -14,11 +14,11 @@ export function PageHero({
     <section className="relative overflow-hidden border-b border-line pt-[72px]">
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(90%_120%_at_50%_0%,rgba(201,162,39,0.12),transparent_62%)]"
+        className="absolute inset-0 bg-[radial-gradient(90%_120%_at_50%_0%,rgba(168,135,29,0.14),transparent_62%)]"
       />
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 -bottom-4 select-none text-center font-display text-[15vw] font-semibold leading-none tracking-[0.14em] text-cream/[0.025]"
+        className="pointer-events-none absolute inset-x-0 -bottom-4 select-none text-center font-display text-[15vw] font-semibold leading-none tracking-[0.14em] text-ink/[0.025]"
       >
         {title.toUpperCase()}
       </span>
@@ -27,7 +27,7 @@ export function PageHero({
         <FadeUp className="text-center">
           <div className="mb-6 flex items-center justify-center gap-4">
             <span className="h-px w-8 bg-gold/60" />
-            <span className="eyebrow text-gold-light">{eyebrow}</span>
+            <span className="eyebrow text-gold-strong">{eyebrow}</span>
             <span className="h-px w-8 bg-gold/60" />
           </div>
           <h1 className="text-gold-gradient font-display text-4xl font-semibold tracking-[0.14em] sm:text-6xl">

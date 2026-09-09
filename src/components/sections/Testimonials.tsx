@@ -9,20 +9,20 @@ export function Testimonials({ testimonials }: { testimonials: Testimonial[] }) 
   if (testimonials.length === 0) return null;
 
   return (
-    <section className="border-y border-line bg-ink-soft py-24">
+    <section className="border-y border-line bg-paper-soft py-24">
       <Container>
         <SectionHeading label="Kind words" />
         <Stagger className="grid gap-6 md:grid-cols-2">
           {testimonials.map((t) => (
             <StaggerItem key={t._id} className="h-full">
-              <figure className="flex h-full flex-col border border-line bg-surface/50 p-8">
+              <figure className="flex h-full flex-col border border-line bg-panel/50 p-8">
                 <span
                   aria-hidden="true"
                   className="font-display text-4xl leading-none text-gold/40"
                 >
                   &ldquo;
                 </span>
-                <blockquote className="mt-4 flex-1 text-[0.95rem] leading-relaxed text-cream/85">
+                <blockquote className="mt-4 flex-1 text-[0.95rem] leading-relaxed text-ink/85">
                   {t.quote}
                 </blockquote>
                 <figcaption className="mt-7 flex items-center gap-4 border-t border-line pt-6">
@@ -36,7 +36,7 @@ export function Testimonials({ testimonials }: { testimonials: Testimonial[] }) 
                     />
                   )}
                   <div>
-                    <p className="text-sm text-cream">{t.clientName}</p>
+                    <p className="text-sm text-ink">{t.clientName}</p>
                     {(t.clientRole || t.clientCompany) && (
                       <p className="text-xs text-dim">
                         {[t.clientRole, t.clientCompany]

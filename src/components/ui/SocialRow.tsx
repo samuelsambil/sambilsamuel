@@ -20,7 +20,7 @@ export function SocialRow({ className = "" }: { className?: string }) {
           target={href.startsWith("http") ? "_blank" : undefined}
           rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
           aria-label={label}
-          className="flex h-10 w-10 items-center justify-center border border-line text-muted transition-all duration-300 hover:border-line-gold hover:text-gold-light"
+          className="flex h-10 w-10 items-center justify-center border border-line text-muted transition-all duration-300 hover:border-line-gold hover:text-gold-strong"
         >
           <Icon className="h-[0.95rem] w-[0.95rem]" />
         </a>

@@ -16,7 +16,7 @@ export function CornerBrackets({ className = "" }: { className?: string }) {
 /** Soft radial glow used behind hero and section anchors. */
 export function Glow({
   className = "",
-  color = "rgba(201,162,39,0.16)",
+  color = "rgba(168,135,29,0.16)",
 }: {
   className?: string;
   color?: string;

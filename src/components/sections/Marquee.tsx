@@ -4,14 +4,14 @@ export function Marquee() {
   const track = [...interests, ...interests];
 
   return (
-    <div className="relative overflow-hidden border-y border-line bg-ink-soft py-5">
+    <div className="relative overflow-hidden border-y border-line bg-paper-soft py-5">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-ink-soft to-transparent"
+        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-paper-soft to-transparent"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-ink-soft to-transparent"
+        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-paper-soft to-transparent"
       />
       <div className="animate-marquee flex w-max items-center gap-10">
         {track.map((item, i) => (

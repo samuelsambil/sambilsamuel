@@ -5,10 +5,10 @@ const base =
   "group inline-flex items-center justify-center gap-2.5 text-[0.7rem] font-medium uppercase tracking-[0.22em] transition-all duration-300";
 
 const variants = {
-  gold: "bg-gradient-to-r from-gold-deep via-gold to-gold-light px-7 py-3.5 text-ink hover:shadow-[0_0_34px_-6px_rgba(201,162,39,0.65)] hover:brightness-110",
+  gold: "bg-gradient-to-r from-gold via-gold-soft to-gold px-7 py-3.5 text-ink hover:shadow-[0_0_34px_-6px_rgba(122,95,18,0.32)] hover:brightness-110",
   ghost:
-    "border border-line-gold px-7 py-3.5 text-cream/85 hover:border-gold hover:bg-gold/[0.07] hover:text-gold-light",
-  minimal: "text-muted hover:text-gold-light",
+    "border border-line-gold px-7 py-3.5 text-ink/85 hover:border-gold hover:bg-gold/[0.07] hover:text-gold-strong",
+  minimal: "text-muted hover:text-gold-strong",
 } as const;
 
 type Variant = keyof typeof variants;

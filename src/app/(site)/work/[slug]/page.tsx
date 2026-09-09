@@ -74,19 +74,19 @@ export default async function ProjectPage({
       <section className="relative overflow-hidden border-b border-line">
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-[radial-gradient(80%_110%_at_50%_0%,rgba(201,162,39,0.12),transparent_60%)]"
+          className="absolute inset-0 bg-[radial-gradient(80%_110%_at_50%_0%,rgba(168,135,29,0.14),transparent_60%)]"
         />
         <Container className="relative py-16 sm:py-24">
           <Link
             href="/work"
-            className="mb-10 inline-flex text-[0.65rem] uppercase tracking-[0.2em] text-dim transition-colors hover:text-gold-light"
+            className="mb-10 inline-flex text-[0.65rem] uppercase tracking-[0.2em] text-dim transition-colors hover:text-gold-strong"
           >
             All work
           </Link>
 
           <FadeUp>
             <div className="mb-6 flex flex-wrap items-center gap-4">
-              <span className="border border-line-gold px-3 py-1 text-[0.58rem] uppercase tracking-[0.2em] text-gold-light">
+              <span className="border border-line-gold px-3 py-1 text-[0.58rem] uppercase tracking-[0.2em] text-gold-strong">
                 {project.category}
               </span>
               {project.completedAt && (
@@ -96,7 +96,7 @@ export default async function ProjectPage({
               )}
             </div>
 
-            <h1 className="max-w-3xl font-display text-4xl font-semibold leading-tight tracking-[0.06em] text-cream sm:text-5xl">
+            <h1 className="max-w-3xl font-display text-4xl font-semibold leading-tight tracking-[0.06em] text-ink sm:text-5xl">
               {project.title}
             </h1>
             <p className="mt-6 max-w-2xl text-[0.98rem] leading-relaxed text-muted">
@@ -110,7 +110,7 @@ export default async function ProjectPage({
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-2.5 bg-gradient-to-r from-gold-deep via-gold to-gold-light px-6 py-3 text-[0.65rem] font-medium uppercase tracking-[0.2em] text-ink transition-all hover:brightness-110"
+                    className="group inline-flex items-center gap-2.5 bg-gradient-to-r from-gold via-gold-soft to-gold px-6 py-3 text-[0.65rem] font-medium uppercase tracking-[0.2em] text-ink transition-all hover:brightness-110"
                   >
                     Visit site
                     <FiExternalLink className="h-3.5 w-3.5" />
@@ -121,7 +121,7 @@ export default async function ProjectPage({
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2.5 border border-line-gold px-6 py-3 text-[0.65rem] font-medium uppercase tracking-[0.2em] text-gold-light transition-all hover:bg-gold/10"
+                    className="inline-flex items-center gap-2.5 border border-line-gold px-6 py-3 text-[0.65rem] font-medium uppercase tracking-[0.2em] text-gold-strong transition-all hover:bg-gold/10"
                   >
                     Source
                     <FiGithub className="h-3.5 w-3.5" />
@@ -158,7 +158,7 @@ export default async function ProjectPage({
               project[key] ? (
                 <FadeUp key={key} className="mb-12">
                   <div className="mb-4 flex items-center gap-4">
-                    <span className="eyebrow text-gold-light">{label}</span>
+                    <span className="eyebrow text-gold-strong">{label}</span>
                     <span className="rule-gold h-px flex-1 opacity-30" />
                   </div>
                   <p className="text-[0.95rem] leading-relaxed text-muted">
@@ -178,7 +178,7 @@ export default async function ProjectPage({
           <aside className="lg:border-l lg:border-line lg:pl-10">
             {project.techStack && project.techStack.length > 0 && (
               <FadeUp>
-                <h2 className="eyebrow mb-5 text-gold-light">Built with</h2>
+                <h2 className="eyebrow mb-5 text-gold-strong">Built with</h2>
                 <ul className="space-y-2.5">
                   {project.techStack.map((tech) => (
                     <li

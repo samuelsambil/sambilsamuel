@@ -25,14 +25,14 @@ export function Hero({
       {/* Ground */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(120%_90%_at_78%_20%,rgba(201,162,39,0.13),transparent_58%)]"
+        className="absolute inset-0 bg-[radial-gradient(120%_90%_at_78%_20%,rgba(168,135,29,0.15),transparent_58%)]"
       />
-      <Glow className="-left-40 top-1/3 h-[26rem] w-[26rem]" color="rgba(201,162,39,0.08)" />
+      <Glow className="-left-40 top-1/3 h-[26rem] w-[26rem]" color="rgba(168,135,29,0.13)" />
 
       {/* Watermark word, echoing the template's ghosted display type */}
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-[8%] select-none text-center font-display text-[19vw] font-semibold leading-none tracking-[0.16em] text-cream/[0.028]"
+        className="pointer-events-none absolute inset-x-0 bottom-[8%] select-none text-center font-display text-[19vw] font-semibold leading-none tracking-[0.16em] text-ink/[0.05]"
       >
         SAMBIL
       </span>
@@ -51,13 +51,13 @@ export function Hero({
               className="mb-8 flex items-center gap-4"
             >
               <span className="h-px w-10 bg-gold/70" />
-              <span className="eyebrow text-gold-light">{eyebrow}</span>
+              <span className="eyebrow text-gold-strong">{eyebrow}</span>
             </motion.div>
 
             <h1 className="mb-8">
               <motion.span
                 variants={fadeUpVariants}
-                className="block font-display text-xl font-medium tracking-[0.3em] text-cream/80 sm:text-2xl"
+                className="block font-display text-xl font-medium tracking-[0.3em] text-ink/80 sm:text-2xl"
               >
                 THE WORK OF
               </motion.span>
@@ -105,30 +105,30 @@ export function Hero({
                 aria-hidden="true"
                 className="absolute -left-5 -top-5 h-full w-full border border-line-gold"
               />
-              <div className="relative aspect-[4/5] overflow-hidden bg-surface">
+              <div className="relative aspect-[4/5] overflow-hidden bg-panel">
                 <Image
                   src={portraitUrl}
                   alt={site.name}
                   fill
                   priority
                   sizes="(max-width: 1024px) 80vw, 420px"
-                  className="object-cover object-top grayscale-[0.9] brightness-[0.68] contrast-[1.15]"
+                  className="object-cover object-top grayscale-[0.85] brightness-[1.02] contrast-[1.04]"
                 />
                 {/* Gold wash, so the portrait sits in the same palette as the page */}
                 <span
                   aria-hidden="true"
-                  className="absolute inset-0 bg-gradient-to-br from-gold/45 via-gold/10 to-transparent mix-blend-overlay"
+                  className="absolute inset-0 bg-gradient-to-br from-gold/30 via-gold/8 to-transparent mix-blend-overlay"
                 />
                 <span
                   aria-hidden="true"
-                  className="absolute inset-0 bg-gradient-to-t from-ink via-ink/25 to-transparent"
+                  className="absolute inset-0 bg-gradient-to-t from-paper via-paper/25 to-transparent"
                 />
                 <CornerBrackets />
               </div>
 
-              <div className="absolute -bottom-5 left-1/2 flex -translate-x-1/2 items-center gap-3 border border-line-gold bg-ink px-5 py-2.5 whitespace-nowrap">
+              <div className="absolute -bottom-5 left-1/2 flex -translate-x-1/2 items-center gap-3 border border-line-gold bg-paper px-5 py-2.5 whitespace-nowrap">
                 <span className="animate-shimmer h-1.5 w-1.5 rounded-full bg-gold" />
-                <span className="text-[0.6rem] uppercase tracking-[0.22em] text-cream/80">
+                <span className="text-[0.6rem] uppercase tracking-[0.22em] text-ink/80">
                   {site.role}
                 </span>
               </div>

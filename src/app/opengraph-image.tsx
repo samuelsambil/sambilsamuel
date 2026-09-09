@@ -16,10 +16,10 @@ export default async function OpenGraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "0 90px",
-          backgroundColor: "#050507",
+          backgroundColor: "#faf8f3",
           backgroundImage:
-            "radial-gradient(90% 80% at 78% 15%, rgba(201,162,39,0.24), transparent 60%)",
-          color: "#f4f1e8",
+            "radial-gradient(90% 80% at 78% 15%, rgba(168,135,29,0.20), transparent 60%)",
+          color: "#1a1917",
           fontFamily: "serif",
         }}
       >
@@ -30,11 +30,11 @@ export default async function OpenGraphImage() {
             gap: 18,
             fontSize: 22,
             letterSpacing: 8,
-            color: "#e8c87e",
+            color: "#7a5f12",
             textTransform: "uppercase",
           }}
         >
-          <div style={{ width: 56, height: 2, backgroundColor: "#c9a227" }} />
+          <div style={{ width: 56, height: 2, backgroundColor: "#a8871d" }} />
           {site.eyebrow}
         </div>
 
@@ -44,7 +44,7 @@ export default async function OpenGraphImage() {
             fontSize: 34,
             letterSpacing: 14,
             marginTop: 42,
-            color: "rgba(244,241,232,0.8)",
+            color: "rgba(26,25,23,0.72)",
           }}
         >
           THE WORK OF
@@ -57,7 +57,7 @@ export default async function OpenGraphImage() {
             letterSpacing: 12,
             marginTop: 10,
             fontWeight: 700,
-            color: "#e8c87e",
+            color: "#7a5f12",
           }}
         >
           SAMBIL
@@ -70,7 +70,7 @@ export default async function OpenGraphImage() {
             marginTop: 40,
             maxWidth: 820,
             lineHeight: 1.5,
-            color: "rgba(157,152,145,1)",
+            color: "rgba(90,87,81,1)",
             fontFamily: "sans-serif",
           }}
         >

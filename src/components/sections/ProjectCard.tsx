@@ -12,7 +12,7 @@ function Placeholder({ title }: { title: string }) {
     .join("");
 
   return (
-    <div className="flex h-full w-full items-center justify-center bg-[radial-gradient(80%_80%_at_50%_25%,rgba(201,162,39,0.14),transparent_70%)]">
+    <div className="flex h-full w-full items-center justify-center bg-[radial-gradient(80%_80%_at_50%_25%,rgba(168,135,29,0.16),transparent_70%)]">
       <span className="text-gold-gradient font-display text-4xl font-semibold tracking-[0.18em]">
         {initials}
       </span>
@@ -28,7 +28,7 @@ export function ProjectCard({ project }: { project: Project }) {
   return (
     <Link
       href={`/work/${project.slug.current}`}
-      className="group relative flex h-full flex-col border border-line bg-surface/60 transition-all duration-500 hover:border-line-gold hover:bg-surface"
+      className="group relative flex h-full flex-col border border-line bg-panel/60 transition-all duration-500 hover:border-line-gold hover:bg-panel"
     >
       <div className="relative aspect-[4/3] overflow-hidden">
         {cover ? (
@@ -44,15 +44,15 @@ export function ProjectCard({ project }: { project: Project }) {
         )}
         <span
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent"
+          className="absolute inset-0 bg-gradient-to-t from-paper/85 via-paper/10 to-transparent"
         />
-        <span className="absolute left-4 top-4 border border-line-gold bg-ink/70 px-2.5 py-1 text-[0.55rem] uppercase tracking-[0.2em] text-gold-light backdrop-blur-sm">
+        <span className="absolute left-4 top-4 border border-line-gold bg-paper/70 px-2.5 py-1 text-[0.55rem] uppercase tracking-[0.2em] text-gold-strong backdrop-blur-sm">
           {project.category}
         </span>
       </div>
 
       <div className="flex flex-1 flex-col border-t border-line p-5 transition-colors duration-500 group-hover:border-line-gold">
-        <h3 className="font-display text-base font-semibold tracking-[0.05em] text-cream transition-colors group-hover:text-gold-light">
+        <h3 className="font-display text-base font-semibold tracking-[0.05em] text-ink transition-colors group-hover:text-gold-strong">
           {project.title}
         </h3>
 

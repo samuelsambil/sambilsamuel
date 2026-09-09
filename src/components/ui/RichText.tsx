@@ -7,17 +7,17 @@ import type { SanityImage } from "@/lib/sanity/types";
 const components: PortableTextComponents = {
   block: {
     h2: ({ children }) => (
-      <h2 className="mt-12 mb-4 font-display text-2xl font-semibold tracking-[0.06em] text-cream">
+      <h2 className="mt-12 mb-4 font-display text-2xl font-semibold tracking-[0.06em] text-ink">
         {children}
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="mt-9 mb-3 font-display text-xl font-semibold tracking-[0.05em] text-cream">
+      <h3 className="mt-9 mb-3 font-display text-xl font-semibold tracking-[0.05em] text-ink">
         {children}
       </h3>
     ),
     blockquote: ({ children }) => (
-      <blockquote className="my-8 border-l-2 border-gold/60 pl-6 text-cream/85 italic">
+      <blockquote className="my-8 border-l-2 border-gold/60 pl-6 text-ink/85 italic">
         {children}
       </blockquote>
     ),
@@ -39,10 +39,10 @@ const components: PortableTextComponents = {
   },
   marks: {
     strong: ({ children }) => (
-      <strong className="font-semibold text-cream">{children}</strong>
+      <strong className="font-semibold text-ink">{children}</strong>
     ),
     code: ({ children }) => (
-      <code className="bg-surface px-1.5 py-0.5 font-mono text-[0.85em] text-gold-light">
+      <code className="bg-panel px-1.5 py-0.5 font-mono text-[0.85em] text-gold-strong">
         {children}
       </code>
     ),
@@ -51,7 +51,7 @@ const components: PortableTextComponents = {
         href={value?.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-gold-light underline underline-offset-4 transition-colors hover:text-gold"
+        className="text-gold-strong underline underline-offset-4 transition-colors hover:text-gold"
       >
         {children}
       </a>

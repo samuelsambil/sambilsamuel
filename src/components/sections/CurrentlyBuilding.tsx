@@ -20,16 +20,16 @@ export function CurrentlyBuilding({
   url?: string;
 }) {
   const body = (
-    <div className="relative overflow-hidden border border-line-gold bg-[linear-gradient(105deg,#101017_0%,#16161f_55%,rgba(201,162,39,0.10)_100%)] px-8 py-12 sm:px-12">
+    <div className="relative overflow-hidden border border-line-gold bg-[linear-gradient(105deg,#f4f0e5_0%,#efe9db_55%,rgba(168,135,29,0.16)_100%)] px-8 py-12 sm:px-12">
       <div className="relative max-w-2xl">
         <div className="mb-5 flex items-center gap-3">
           <span className="animate-shimmer h-1.5 w-1.5 rounded-full bg-gold" />
-          <span className="text-[0.6rem] uppercase tracking-[0.24em] text-gold-light">
+          <span className="text-[0.6rem] uppercase tracking-[0.24em] text-gold-strong">
             {statusLabel[status]}
           </span>
         </div>
 
-        <h3 className="font-display text-3xl font-semibold tracking-[0.1em] text-cream sm:text-4xl">
+        <h3 className="font-display text-3xl font-semibold tracking-[0.1em] text-ink sm:text-4xl">
           {name}
         </h3>
         <p className="mt-4 text-[0.95rem] leading-relaxed text-muted">
@@ -37,7 +37,7 @@ export function CurrentlyBuilding({
         </p>
 
         {url && (
-          <span className="mt-7 inline-flex text-[0.65rem] uppercase tracking-[0.2em] text-gold-light">
+          <span className="mt-7 inline-flex text-[0.65rem] uppercase tracking-[0.2em] text-gold-strong">
             Visit
           </span>
         )}

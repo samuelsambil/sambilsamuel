@@ -57,7 +57,7 @@ export default async function AboutPage() {
                   aria-hidden="true"
                   className="absolute -left-4 -top-4 h-full w-full border border-line-gold"
                 />
-                <div className="relative aspect-[4/5] overflow-hidden bg-surface">
+                <div className="relative aspect-[4/5] overflow-hidden bg-panel">
                   <Image
                     src={portrait}
                     alt={site.name}
@@ -72,7 +72,7 @@ export default async function AboutPage() {
                   />
                   <span
                     aria-hidden="true"
-                    className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent"
+                    className="absolute inset-0 bg-gradient-to-t from-paper/70 to-transparent"
                   />
                   <CornerBrackets />
                 </div>
@@ -83,13 +83,13 @@ export default async function AboutPage() {
                   <dt className="text-[0.62rem] uppercase tracking-[0.2em] text-dim">
                     Role
                   </dt>
-                  <dd className="text-sm text-cream">{site.role}</dd>
+                  <dd className="text-sm text-ink">{site.role}</dd>
                 </div>
                 <div className="flex justify-between gap-4">
                   <dt className="text-[0.62rem] uppercase tracking-[0.2em] text-dim">
                     Brand
                   </dt>
-                  <dd className="text-sm text-cream">Built by Sambil</dd>
+                  <dd className="text-sm text-ink">Built by Sambil</dd>
                 </div>
                 <div className="flex justify-between gap-4">
                   <dt className="text-[0.62rem] uppercase tracking-[0.2em] text-dim">
@@ -98,7 +98,7 @@ export default async function AboutPage() {
                   <dd>
                     <a
                       href={`mailto:${site.email}`}
-                      className="text-sm text-gold-light transition-colors hover:text-gold"
+                      className="text-sm text-gold-strong transition-colors hover:text-gold"
                     >
                       Say hello
                     </a>
@@ -116,7 +116,7 @@ export default async function AboutPage() {
                     <p
                       key={i}
                       className={`mb-6 text-[0.98rem] leading-[1.85] ${
-                        i === 0 ? "text-cream/90" : "text-muted"
+                        i === 0 ? "text-ink/90" : "text-muted"
                       }`}
                     >
                       {paragraph}
@@ -129,13 +129,13 @@ export default async function AboutPage() {
         </Container>
       </section>
 
-      <section className="border-y border-line bg-ink-soft py-20">
+      <section className="border-y border-line bg-paper-soft py-20">
         <Container>
           <SectionHeading label="Skills & tools" />
           <Stagger className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {skillGroups.map((group) => (
               <StaggerItem key={group.title}>
-                <h3 className="mb-5 text-[0.62rem] uppercase tracking-[0.2em] text-gold-light">
+                <h3 className="mb-5 text-[0.62rem] uppercase tracking-[0.2em] text-gold-strong">
                   {group.title}
                 </h3>
                 <ul className="space-y-2.5">
@@ -160,11 +160,11 @@ export default async function AboutPage() {
           <Stagger className="grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
             {focusAreas.map((area, i) => (
               <StaggerItem key={area.title} className="h-full">
-                <div className="group flex h-full flex-col bg-ink p-8 transition-colors duration-500 hover:bg-surface">
+                <div className="group flex h-full flex-col bg-paper p-8 transition-colors duration-500 hover:bg-panel">
                   <span className="font-display text-xs tracking-[0.24em] text-gold/70">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="mt-5 font-display text-lg font-semibold tracking-[0.05em] text-cream transition-colors group-hover:text-gold-light">
+                  <h3 className="mt-5 font-display text-lg font-semibold tracking-[0.05em] text-ink transition-colors group-hover:text-gold-strong">
                     {area.title}
                   </h3>
                   <p className="mt-3 text-[0.82rem] leading-relaxed text-muted">

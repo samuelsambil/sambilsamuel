@@ -11,7 +11,7 @@ export function Services() {
         <SectionHeading label="Built by Sambil" />
 
         <FadeUp className="mb-12 max-w-2xl">
-          <h2 className="font-display text-3xl font-semibold leading-tight tracking-[0.06em] text-cream sm:text-4xl">
+          <h2 className="font-display text-3xl font-semibold leading-tight tracking-[0.06em] text-ink sm:text-4xl">
             I also build websites for{" "}
             <span className="text-gold-gradient">small businesses</span>
           </h2>
@@ -24,11 +24,11 @@ export function Services() {
         <Stagger className="grid gap-px border border-line bg-line sm:grid-cols-3">
           {services.map((service, i) => (
             <StaggerItem key={service.title} className="h-full">
-              <div className="group flex h-full flex-col bg-ink p-8 transition-colors duration-500 hover:bg-surface">
+              <div className="group flex h-full flex-col bg-paper p-8 transition-colors duration-500 hover:bg-panel">
                 <span className="font-display text-xs tracking-[0.24em] text-gold/70">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="mt-5 font-display text-lg font-semibold tracking-[0.05em] text-cream transition-colors group-hover:text-gold-light">
+                <h3 className="mt-5 font-display text-lg font-semibold tracking-[0.05em] text-ink transition-colors group-hover:text-gold-strong">
                   {service.title}
                 </h3>
                 <p className="mt-3 text-[0.82rem] leading-relaxed text-muted">

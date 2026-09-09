@@ -7,7 +7,7 @@ import { GoldButton } from "@/components/ui/Button";
 type Status = "idle" | "sending" | "sent" | "error";
 
 const fieldClass =
-  "w-full border border-line bg-surface/50 px-4 py-3 text-sm text-cream placeholder:text-dim transition-colors focus:border-line-gold focus:outline-none";
+  "w-full border border-line bg-panel/50 px-4 py-3 text-sm text-ink placeholder:text-dim transition-colors focus:border-line-gold focus:outline-none";
 
 const labelClass =
   "mb-2 block text-[0.6rem] uppercase tracking-[0.2em] text-muted";
@@ -57,11 +57,11 @@ export function ContactForm() {
 
   if (status === "sent") {
     return (
-      <div className="flex flex-col items-start border border-line-gold bg-surface/50 p-10">
-        <span className="mb-5 flex h-11 w-11 items-center justify-center border border-line-gold text-gold-light">
+      <div className="flex flex-col items-start border border-line-gold bg-panel/50 p-10">
+        <span className="mb-5 flex h-11 w-11 items-center justify-center border border-line-gold text-gold-strong">
           <FiCheck className="h-5 w-5" />
         </span>
-        <h3 className="font-display text-xl font-semibold tracking-[0.06em] text-cream">
+        <h3 className="font-display text-xl font-semibold tracking-[0.06em] text-ink">
           Message sent
         </h3>
         <p className="mt-3 text-sm leading-relaxed text-muted">
@@ -70,7 +70,7 @@ export function ContactForm() {
         <button
           type="button"
           onClick={() => setStatus("idle")}
-          className="mt-7 text-[0.65rem] uppercase tracking-[0.2em] text-gold-light transition-colors hover:text-gold"
+          className="mt-7 text-[0.65rem] uppercase tracking-[0.2em] text-gold-strong transition-colors hover:text-gold"
         >
           Send another
         </button>

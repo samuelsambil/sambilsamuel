@@ -33,10 +33,10 @@ export default function ContactPage() {
 
             <div className="space-y-12">
               <FadeUp>
-                <h2 className="eyebrow mb-5 text-gold-light">Direct</h2>
+                <h2 className="eyebrow mb-5 text-gold-strong">Direct</h2>
                 <a
                   href={`mailto:${site.email}`}
-                  className="text-base tracking-[0.04em] text-cream transition-colors hover:text-gold-light"
+                  className="text-base tracking-[0.04em] text-ink transition-colors hover:text-gold-strong"
                 >
                   {site.email}
                 </a>
@@ -46,11 +46,11 @@ export default function ContactPage() {
               </FadeUp>
 
               <FadeUp delay={0.1}>
-                <h2 className="eyebrow mb-5 text-gold-light">Questions</h2>
+                <h2 className="eyebrow mb-5 text-gold-strong">Questions</h2>
                 <dl className="divide-y divide-[color:var(--color-line)] border-y border-line">
                   {faqs.map((faq) => (
                     <div key={faq.question} className="py-5">
-                      <dt className="text-sm font-medium text-cream">
+                      <dt className="text-sm font-medium text-ink">
                         {faq.question}
                       </dt>
                       <dd className="mt-2 text-[0.82rem] leading-relaxed text-muted">
