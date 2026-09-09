@@ -5,6 +5,8 @@ export const alt = `${site.name} — ${site.eyebrow}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+const WORDS = ["LEARNING", "BUILDING", "SCALING"];
+
 export default async function OpenGraphImage() {
   return new ImageResponse(
     (
@@ -23,6 +25,7 @@ export default async function OpenGraphImage() {
           fontFamily: "serif",
         }}
       >
+        {/* The card carries the name, since a reshared image loses the title. */}
         <div
           style={{
             display: "flex",
@@ -35,39 +38,34 @@ export default async function OpenGraphImage() {
           }}
         >
           <div style={{ width: 56, height: 2, backgroundColor: "#a8871d" }} />
-          {site.eyebrow}
+          {site.name}
         </div>
 
-        <div
-          style={{
-            display: "flex",
-            fontSize: 34,
-            letterSpacing: 14,
-            marginTop: 42,
-            color: "rgba(26,25,23,0.72)",
-          }}
-        >
-          THE WORK OF
-        </div>
-
-        <div
-          style={{
-            display: "flex",
-            fontSize: 132,
-            letterSpacing: 12,
-            marginTop: 10,
-            fontWeight: 700,
-            color: "#7a5f12",
-          }}
-        >
-          SAMBIL
+        {/* Stacked rather than one line: three words plus separators run far
+            wider than the card at a display size worth using. */}
+        <div style={{ display: "flex", flexDirection: "column", marginTop: 34 }}>
+          {WORDS.map((word) => (
+            <div
+              key={word}
+              style={{
+                display: "flex",
+                fontSize: 92,
+                letterSpacing: 10,
+                lineHeight: 1.06,
+                fontWeight: 700,
+                color: "#7a5f12",
+              }}
+            >
+              {word}
+            </div>
+          ))}
         </div>
 
         <div
           style={{
             display: "flex",
             fontSize: 26,
-            marginTop: 40,
+            marginTop: 38,
             maxWidth: 820,
             lineHeight: 1.5,
             color: "rgba(90,87,81,1)",
