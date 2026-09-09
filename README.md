@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# sambilsamuel.com
 
-## Getting Started
+Personal portfolio for Samuel Sambil. Next.js App Router, Tailwind CSS v4, Sanity CMS,
+deployed on Vercel.
 
-First, run the development server:
+## Running locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Copy `.env.example` to `.env.local` and fill it in. The site runs without any of
+these set, falling back to the content in `src/lib/content.ts`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/app/(site)      Public pages: home, work, work/[slug], about, contact
+src/app/(studio)    Sanity Studio, mounted at /studio
+src/app/api/contact Contact form handler (Resend)
+src/components      Layout, sections and UI primitives
+src/lib/content.ts  All fallback copy, links and project data
+src/lib/sanity      Client, queries, types and a fetch wrapper that never throws
+src/sanity          Studio config and schemas
+```
 
-## Learn More
+## Editing content
 
-To learn more about Next.js, take a look at the following resources:
+Two options, and they compose:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Sanity Studio** at `/studio`. Whatever exists there wins.
+2. **`src/lib/content.ts`**. Used whenever Sanity has nothing for that field.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The Sanity dataset starts empty, so the site ships showing the fallback content.
+Adding a project in the Studio replaces the whole fallback project list.
 
-## Deploy on Vercel
+## Design
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The palette and type live in the `@theme` block at the top of
+`src/app/globals.css`. Gold accents, a near-black ground, Cinzel for display and
+Jost for body text. Change the tokens there and the whole site follows.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Environment variables
+
+| Variable | Needed for |
+| --- | --- |
+| `NEXT_PUBLIC_SANITY_PROJECT_ID` | Reading content from Sanity |
+| `NEXT_PUBLIC_SANITY_DATASET` | Reading content from Sanity |
+| `NEXT_PUBLIC_SITE_URL` | Canonical URLs, sitemap, Open Graph |
+| `RESEND_API_KEY` | Sending contact form email |
+| `CONTACT_TO_EMAIL` | Where contact form email lands |
+| `CONTACT_FROM_EMAIL` | Verified Resend sender |
+
+Without `RESEND_API_KEY` the contact form accepts submissions and logs a warning
+instead of sending.
+
+## Notes
+
+Turbopack reuses `.next` between builds and can leave a stale CSS chunk
+reference behind. If local `npm run start` loads unstyled, `rm -rf .next` and
+rebuild. Vercel always builds clean, so it does not happen there.
