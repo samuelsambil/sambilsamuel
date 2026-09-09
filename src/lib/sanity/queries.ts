@@ -52,6 +52,15 @@ export const projectSlugsQuery = groq`
   *[_type == "project" && defined(slug.current)] { "slug": slug.current }
 `;
 
+/** Slugs plus the dates the sitemap needs for an honest `lastmod`. */
+export const projectSitemapQuery = groq`
+  *[_type == "project" && defined(slug.current)] {
+    "slug": slug.current,
+    "updatedAt": _updatedAt,
+    completedAt
+  }
+`;
+
 export const testimonialsQuery = groq`
   *[_type == "testimonial" && featured == true] {
     _id,

@@ -3,6 +3,14 @@ import type { Project } from "@/lib/sanity/types";
 export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "https://sambilsamuel.com";
 
+/**
+ * Date the static page copy last changed, used as `lastModified` in the
+ * sitemap. Crawlers ignore a `lastmod` that moves on every request, so bump
+ * this by hand when the wording on the home, work, about or contact page
+ * actually changes.
+ */
+export const siteUpdatedAt = "2026-09-09";
+
 export const site = {
   name: "Samuel Sambil",
   shortName: "SAMBIL",
