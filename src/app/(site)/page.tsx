@@ -37,7 +37,7 @@ export default async function HomePage() {
   return (
     <>
       <Hero
-        eyebrow={settings?.heroEyebrow || site.eyebrow}
+        eyebrow={settings?.heroEyebrow || site.role}
         tagline={settings?.heroTagline || site.tagline}
         description={settings?.heroDescription || site.description}
         portraitUrl={

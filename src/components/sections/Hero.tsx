@@ -57,15 +57,13 @@ export function Hero({
             <h1 className="mb-8">
               <motion.span
                 variants={fadeUpVariants}
-                className="block font-display text-xl font-medium tracking-[0.3em] text-ink/80 sm:text-2xl"
+                className="text-gold-gradient block font-display text-[1.6rem] font-semibold leading-[1.3] tracking-[0.08em] sm:text-[2.1rem] lg:text-[1.8rem] xl:text-[2.2rem]"
               >
-                THE WORK OF
-              </motion.span>
-              <motion.span
-                variants={fadeUpVariants}
-                className="text-gold-gradient mt-3 block font-display text-[3.4rem] font-semibold leading-[0.95] tracking-[0.12em] sm:text-7xl lg:text-8xl"
-              >
-                SAMBIL
+                LEARNING
+                <Pipe />
+                BUILDING
+                <Pipe />
+                SCALING
               </motion.span>
             </h1>
 
@@ -137,5 +135,15 @@ export function Hero({
         </motion.div>
       </Container>
     </section>
+  );
+}
+
+/** Hairline divider between the heading words. */
+function Pipe() {
+  return (
+    <span
+      aria-hidden="true"
+      className="mx-1.5 inline-block h-[0.78em] w-px translate-y-[0.06em] bg-gold/45"
+    />
   );
 }
