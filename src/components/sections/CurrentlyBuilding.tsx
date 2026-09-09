@@ -1,7 +1,6 @@
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FadeUp } from "@/components/ui/Motion";
-import { GoldLattice } from "@/components/ui/Ornaments";
 
 const statusLabel = {
   building: "Building",
@@ -22,8 +21,6 @@ export function CurrentlyBuilding({
 }) {
   const body = (
     <div className="relative overflow-hidden border border-line-gold bg-[linear-gradient(105deg,#101017_0%,#16161f_55%,rgba(201,162,39,0.10)_100%)] px-8 py-12 sm:px-12">
-      <GoldLattice className="absolute -right-6 -top-8 h-56 w-40 opacity-40" />
-
       <div className="relative max-w-2xl">
         <div className="mb-5 flex items-center gap-3">
           <span className="animate-shimmer h-1.5 w-1.5 rounded-full bg-gold" />

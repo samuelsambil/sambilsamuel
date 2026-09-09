@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { GoldLink } from "@/components/ui/Button";
 import { Container } from "@/components/layout/Container";
-import { CornerBrackets, GoldLattice, Glow } from "@/components/ui/Ornaments";
+import { CornerBrackets, Glow } from "@/components/ui/Ornaments";
 import { SocialRow } from "@/components/ui/SocialRow";
 import { fadeUpVariants, staggerVariants } from "@/components/ui/Motion";
 import { site } from "@/lib/content";
@@ -99,8 +99,6 @@ export function Hero({
 
           {/* Portrait */}
           <motion.div variants={fadeUpVariants} className="relative">
-            <GoldLattice className="animate-float absolute -right-4 top-6 hidden h-56 w-44 opacity-70 sm:block lg:-right-10" />
-
             <div className="relative mx-auto max-w-sm lg:ml-auto lg:mr-0">
               {/* Offset frame behind the image */}
               <span

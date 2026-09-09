@@ -28,7 +28,6 @@
 
   --animate-marquee: marquee 42s linear infinite;
   --animate-shimmer: shimmer 3.5s ease-in-out infinite;
-  --animate-float: float 7s ease-in-out infinite;
 }
 
 @keyframes marquee {
@@ -47,16 +46,6 @@
   }
   50% {
     opacity: 0.85;
-  }
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-14px);
   }
 }
 

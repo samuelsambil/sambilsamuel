@@ -1,44 +1,4 @@
-/**
- * Decorative gold geometry borrowed from the template's hero: a chevron
- * lattice that fades out, and a hairline corner bracket used around images.
- */
-export function GoldLattice({ className = "" }: { className?: string }) {
-  const rows = 9;
-  const cols = 7;
-  const cell = 26;
-
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox={`0 0 ${cols * cell} ${rows * cell}`}
-      className={className}
-      fill="none"
-    >
-      <defs>
-        <linearGradient id="latticeFade" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#e8c87e" stopOpacity="0.9" />
-          <stop offset="55%" stopColor="#c9a227" stopOpacity="0.45" />
-          <stop offset="100%" stopColor="#c9a227" stopOpacity="0" />
-        </linearGradient>
-      </defs>
-      {Array.from({ length: rows }).map((_, r) =>
-        Array.from({ length: cols }).map((__, c) => {
-          const x = c * cell;
-          const y = r * cell;
-          return (
-            <path
-              key={`${r}-${c}`}
-              d={`M${x} ${y + cell} L${x + cell / 2} ${y} L${x + cell} ${y + cell}`}
-              stroke="url(#latticeFade)"
-              strokeWidth="1"
-            />
-          );
-        })
-      )}
-    </svg>
-  );
-}
-
+/** Hairline corner bracket used around images. */
 export function CornerBrackets({ className = "" }: { className?: string }) {
   return (
     <div
