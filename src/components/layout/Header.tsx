@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -40,13 +41,18 @@ export function Header() {
           <Link
             href="/"
             onClick={() => setOpen(false)}
-            className="group flex items-center gap-3"
+            className="group flex items-center"
             aria-label={`${site.name} home`}
           >
-            <Monogram />
-            <span className="font-display text-sm font-semibold tracking-[0.34em] text-ink transition-colors group-hover:text-gold-strong">
-              {site.shortName}
-            </span>
+            <Image
+              src="/logo.png"
+              alt={site.name}
+              width={1125}
+              height={314}
+              sizes="128px"
+              priority
+              className="h-6 w-auto transition-opacity duration-300 group-hover:opacity-75 sm:h-7"
+            />
           </Link>
 
           <nav className="hidden items-center gap-9 md:flex">
@@ -125,15 +131,3 @@ export function Header() {
   );
 }
 
-function Monogram() {
-  return (
-    <span
-      aria-hidden="true"
-      className="relative flex h-8 w-8 rotate-45 items-center justify-center border border-line-gold transition-colors group-hover:border-gold"
-    >
-      <span className="-rotate-45 font-display text-[0.7rem] font-semibold text-gold-strong">
-        S
-      </span>
-    </span>
-  );
-}
