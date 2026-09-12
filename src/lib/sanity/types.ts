@@ -4,6 +4,7 @@ export interface SanityImage {
   _type: "image";
   asset: { _ref: string; _type: "reference" };
   alt?: string;
+  caption?: string;
 }
 
 export type ProjectCategory =
@@ -28,6 +29,27 @@ export interface Project {
   challenge?: string;
   approach?: string;
   keyLearnings?: string;
+}
+
+/** A project reduced to what a card or a related link needs. */
+export interface ProjectRef {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  category: ProjectCategory;
+}
+
+export interface Post {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  excerpt: string;
+  body?: PortableTextBlock[];
+  coverImage?: SanityImage;
+  topics?: string[];
+  featured?: boolean;
+  publishedAt: string;
+  relatedProjects?: ProjectRef[];
 }
 
 export interface Testimonial {

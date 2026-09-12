@@ -58,6 +58,23 @@ const components: PortableTextComponents = {
     ),
   },
   types: {
+    codeBlock: ({
+      value,
+    }: {
+      value: { code?: string; language?: string; filename?: string };
+    }) => (
+      <figure className="my-8 overflow-hidden border border-line bg-panel">
+        {(value.filename || value.language) && (
+          <figcaption className="flex items-center justify-between border-b border-line px-4 py-2 text-[0.58rem] uppercase tracking-[0.18em] text-dim">
+            <span>{value.filename || value.language}</span>
+            {value.filename && value.language && <span>{value.language}</span>}
+          </figcaption>
+        )}
+        <pre className="overflow-x-auto p-4 font-mono text-[0.8rem] leading-relaxed text-ink">
+          <code>{value.code}</code>
+        </pre>
+      </figure>
+    ),
     image: ({ value }: { value: SanityImage & { caption?: string } }) => (
       <figure className="my-10">
         <div className="relative aspect-video overflow-hidden border border-line">

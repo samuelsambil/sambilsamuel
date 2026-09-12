@@ -1,13 +1,11 @@
-import type { Project } from "@/lib/sanity/types";
-
 export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "https://sambilsamuel.com";
 
 /**
  * Date the static page copy last changed, used as `lastModified` in the
- * sitemap. Crawlers ignore a `lastmod` that moves on every request, so bump
- * this by hand when the wording on the home, work, about or contact page
- * actually changes.
+ * sitemap. Projects and posts carry their own dates from Sanity, so this only
+ * covers the wording baked into the home, work, blog, about and contact pages.
+ * Bump it by hand when that copy actually changes.
  */
 export const siteUpdatedAt = "2026-09-09";
 
@@ -34,6 +32,7 @@ export const socials = {
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/work", label: "Work" },
+  { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ] as const;
@@ -45,94 +44,6 @@ export const currentlyBuilding = {
   status: "building" as const,
   url: "",
 };
-
-export const fallbackProjects: Project[] = [
-  {
-    _id: "sustainability-llm",
-    title: "Sustainability LLM",
-    slug: { current: "sustainability-llm" },
-    description:
-      "A small language model tuned to give practical sustainability guidance and environmental awareness insights.",
-    techStack: ["Python", "Transformers", "NLP"],
-    category: "AI & Robotics",
-    featured: true,
-    completedAt: "2025-06-01",
-    challenge:
-      "General purpose models give generic sustainability advice that ignores local context, cost and what a person can actually act on today.",
-    approach:
-      "Curated a focused dataset of environmental practices, fine-tuned a compact open model on it, and shaped the prompting so every answer ends in a concrete next step.",
-    keyLearnings:
-      "Data quality beats model size for a narrow domain. A small, well-fed model outperformed a much larger general one on the answers that mattered.",
-  },
-  {
-    _id: "environmental-monitoring-robot",
-    title: "Environmental Monitoring Robot",
-    slug: { current: "environmental-monitoring-robot" },
-    description:
-      "A robotics system that collects and transmits live sensor readings from locations that are awkward or unsafe to visit.",
-    techStack: ["Python", "Raspberry Pi", "Sensors", "Telemetry"],
-    category: "Hardware",
-    featured: true,
-    completedAt: "2025-03-01",
-    challenge:
-      "Environmental data in remote spots gets collected by hand, rarely and inconsistently, so trends are invisible until they are problems.",
-    approach:
-      "Built a mobile sensor platform on a Raspberry Pi with air, temperature and humidity sensors, and a telemetry link that pushes readings back on an interval.",
-    keyLearnings:
-      "Hardware punishes optimism. Power budget and weather sealing shaped the design far more than the software ever did.",
-  },
-  {
-    _id: "built-by-sambil",
-    title: "Built by Sambil",
-    slug: { current: "built-by-sambil" },
-    description:
-      "My web development brand. Modern, fast websites for small businesses and individuals who need a real presence online.",
-    techStack: ["Next.js", "React", "Tailwind CSS", "Sanity"],
-    category: "Web Dev",
-    featured: true,
-    completedAt: "2025-08-01",
-    liveUrl: "https://builtbysambil.com",
-    challenge:
-      "Small businesses are sold either a template that looks like everyone else or an agency package they cannot afford to maintain.",
-    approach:
-      "A repeatable stack: Next.js for speed, a headless CMS so owners edit their own copy, and hosting set up so the running cost stays close to nothing.",
-    keyLearnings:
-      "Clients do not buy technology. They buy the confidence that the site will keep working after I hand it over.",
-  },
-  {
-    _id: "dharva-voice-assistant",
-    title: "Dharva Voice Assistant",
-    slug: { current: "dharva-voice-assistant" },
-    description:
-      "An AI voice model for daily organisation. Schedules, reminders and planning through natural conversation.",
-    techStack: ["Python", "Speech Recognition", "LLMs"],
-    category: "AI & Robotics",
-    featured: true,
-    completedAt: "2025-09-01",
-    challenge:
-      "Planning tools demand typing and tapping at exactly the moments when your hands and attention are busy elsewhere.",
-    approach:
-      "Pairing speech recognition with an intent layer so a spoken sentence turns straight into a scheduled item, with the model asking only when something is genuinely ambiguous.",
-    keyLearnings:
-      "Latency is the whole product. A correct answer that arrives late feels worse than a fast answer you have to correct.",
-  },
-  {
-    _id: "touch-free-sanitizer",
-    title: "Touch-Free Sanitizer System",
-    slug: { current: "touch-free-sanitizer" },
-    description:
-      "An automatic hand sanitizer dispenser built from an ultrasonic sensor, a pump and a microcontroller.",
-    techStack: ["Arduino", "C++", "Ultrasonic Sensors"],
-    category: "Hardware",
-    completedAt: "2024-11-01",
-    challenge:
-      "Shared dispensers defeat their own purpose. The surface everyone touches sits directly between them and clean hands.",
-    approach:
-      "An ultrasonic sensor triggers a small pump through a microcontroller, with the dispense volume tuned so a single pass gives enough without waste.",
-    keyLearnings:
-      "The first working prototype took an evening. Making it reliable enough to leave unattended took considerably longer.",
-  },
-];
 
 export const services = [
   {

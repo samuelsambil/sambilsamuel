@@ -8,9 +8,21 @@ const projectCardFields = `
   coverImage,
   techStack,
   category,
+  featured,
   liveUrl,
   githubUrl,
   completedAt
+`;
+
+const postCardFields = `
+  _id,
+  title,
+  slug,
+  excerpt,
+  coverImage,
+  topics,
+  featured,
+  publishedAt
 `;
 
 export const siteSettingsQuery = groq`
@@ -58,6 +70,54 @@ export const projectSitemapQuery = groq`
     "slug": slug.current,
     "updatedAt": _updatedAt,
     completedAt
+  }
+`;
+
+/**
+ * Posts dated in the future stay off the site until their time comes, which
+ * makes `publishedAt` a scheduling field rather than just a label.
+ */
+const publishedPosts = `_type == "post" && defined(slug.current) && publishedAt <= now()`;
+
+export const allPostsQuery = groq`
+  *[${publishedPosts}] | order(featured desc, publishedAt desc) {
+    ${postCardFields}
+  }
+`;
+
+export const recentPostsQuery = groq`
+  *[${publishedPosts}] | order(publishedAt desc) [0...$limit] {
+    ${postCardFields}
+  }
+`;
+
+export const postBySlugQuery = groq`
+  *[${publishedPosts} && slug.current == $slug][0] {
+    ${postCardFields},
+    body,
+    relatedProjects[]-> { _id, title, slug, category }
+  }
+`;
+
+export const postSlugsQuery = groq`
+  *[${publishedPosts}] { "slug": slug.current }
+`;
+
+export const postSitemapQuery = groq`
+  *[${publishedPosts}] {
+    "slug": slug.current,
+    "updatedAt": _updatedAt,
+    publishedAt
+  }
+`;
+
+/** The post before and after this one, for the footer of a post page. */
+export const adjacentPostsQuery = groq`
+  {
+    "previous": *[${publishedPosts} && publishedAt < $publishedAt]
+      | order(publishedAt desc) [0] { title, slug },
+    "next": *[${publishedPosts} && publishedAt > $publishedAt]
+      | order(publishedAt asc) [0] { title, slug }
   }
 `;
 

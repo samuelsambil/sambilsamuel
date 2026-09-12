@@ -7,29 +7,22 @@ import { Container } from "@/components/layout/Container";
 import { FadeUp } from "@/components/ui/Motion";
 import { RichText } from "@/components/ui/RichText";
 import { CornerBrackets } from "@/components/ui/Ornaments";
-import { safeFetch } from "@/lib/sanity/fetch";
+import { PROJECT_TAG, safeFetch } from "@/lib/sanity/fetch";
 import { urlFor } from "@/lib/sanity/image";
 import { projectBySlugQuery, projectSlugsQuery } from "@/lib/sanity/queries";
 import type { Project } from "@/lib/sanity/types";
-import { fallbackProjects } from "@/lib/content";
 
-async function getProject(slug: string): Promise<Project | null> {
-  const fromSanity = await safeFetch<Project | null>(
-    projectBySlugQuery,
-    { slug },
-    null
-  );
-  if (fromSanity) return fromSanity;
-  return fallbackProjects.find((p) => p.slug.current === slug) ?? null;
+function getProject(slug: string) {
+  return safeFetch<Project | null>(projectBySlugQuery, { slug }, null, {
+    tags: [PROJECT_TAG],
+  });
 }
 
 export async function generateStaticParams() {
-  const slugs = await safeFetch<{ slug: string }[]>(projectSlugsQuery, {}, []);
-  const all = new Set([
-    ...slugs.map((s) => s.slug),
-    ...fallbackProjects.map((p) => p.slug.current),
-  ]);
-  return Array.from(all).map((slug) => ({ slug }));
+  const slugs = await safeFetch<{ slug: string }[]>(projectSlugsQuery, {}, [], {
+    tags: [PROJECT_TAG],
+  });
+  return slugs.map(({ slug }) => ({ slug }));
 }
 
 export async function generateMetadata({
